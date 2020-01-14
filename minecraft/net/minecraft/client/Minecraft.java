@@ -1,6 +1,7 @@
 package net.minecraft.client;
 
 import cn.acyco.Client;
+import cn.acyco.event.impl.ClientTickEvent;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Queues;
 import com.google.common.collect.Sets;
@@ -36,9 +37,6 @@ import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
@@ -519,6 +517,7 @@ public class Minecraft implements IThreadListener, ISnooperInfo
      */
     private void startGame() throws LWJGLException, IOException
     {
+        Client.getInstance().init();
         this.gameSettings = new GameSettings(this, this.mcDataDir);
         this.field_191950_u = new CreativeSettings(this, this.mcDataDir);
         this.defaultResourcePacks.add(this.mcDefaultResourcePack);
@@ -634,6 +633,7 @@ public class Minecraft implements IThreadListener, ISnooperInfo
         }
 
         this.renderGlobal.makeEntityOutlineShader();
+        Client.getInstance().start();
     }
 
     private void func_193986_ar()
@@ -2010,6 +2010,8 @@ public class Minecraft implements IThreadListener, ISnooperInfo
             this.mcProfiler.endStartSection("pendingConnection");
             this.myNetworkManager.processReceivedPackets();
         }
+        
+        new ClientTickEvent().call();
 
         this.mcProfiler.endSection();
         this.systemTime = getSystemTime();

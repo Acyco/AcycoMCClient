@@ -1,5 +1,6 @@
 package net.minecraft.client.gui;
 
+import cn.acyco.gui.hub.IRenderer;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;

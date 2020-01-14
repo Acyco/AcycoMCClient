@@ -1,5 +1,6 @@
 package net.minecraft.client.renderer;
 
+import cn.acyco.event.impl.RenderEvent;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.gson.JsonSyntaxException;

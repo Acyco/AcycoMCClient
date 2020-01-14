@@ -1,5 +1,6 @@
 package net.minecraft.client.gui;
 
+import cn.acyco.gui.hub.IRenderer;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.TreeMap;
@@ -74,6 +75,11 @@ public class GuiSnooper extends GuiScreen
         super.handleMouseInput();
         this.list.handleMouseInput();
     }
+
+   /* @Override
+    protected void drawTestRect(int absoluteX, int absoleteY, int width, IRenderer renderer) {
+        
+    }*/
 
     /**
      * Called by the controls from the buttonList when activated. (Mouse pressed for buttons)

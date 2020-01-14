@@ -213,7 +213,8 @@ public class GameSettings
         this.difficulty = EnumDifficulty.NORMAL;
         this.lastServer = "";
         this.fovSetting = 70.0F;
-        this.language = "en_us";
+        this.language = "en_us";  
+        addClientKeybinds();
     }
 
     /**
