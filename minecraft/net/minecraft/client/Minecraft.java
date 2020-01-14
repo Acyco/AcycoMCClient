@@ -1,5 +1,6 @@
 package net.minecraft.client;
 
+import cn.acyco.Client;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Queues;
 import com.google.common.collect.Sets;
@@ -685,7 +686,7 @@ public class Minecraft implements IThreadListener, ISnooperInfo
     {
         Display.setResizable(true);
         Display.setTitle("Minecraft 1.12.2");
-
+        Client.setTitle();
         try
         {
             Display.create((new PixelFormat()).withDepthBits(24));
