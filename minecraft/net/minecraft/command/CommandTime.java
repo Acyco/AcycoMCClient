@@ -113,7 +113,7 @@ public class CommandTime extends CommandBase
         }
         else if (args.length == 2 && "set".equals(args[0]))
         {
-            return getListOfStringsMatchingLastWord(args, new String[] {"day", "night"});
+            return getListOfStringsMatchingLastWord(args, new String[] {"day","noon", "night"}); //添加noon的tab补全
         }
         else
         {
