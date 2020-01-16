@@ -48,6 +48,10 @@ public class CommandTime extends CommandBase
                 {
                     i1 = 1000;
                 }
+                else if ("noon".equals(args[1])) //添加可以设置中午的时间
+                {
+                    i1 = 6000;
+                }
                 else if ("night".equals(args[1]))
                 {
                     i1 = 13000;
